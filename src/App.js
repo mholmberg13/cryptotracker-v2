@@ -3,7 +3,7 @@ import './App.css';
 import LandingPage from './components/LandingPage.js';
 import Dashboard from './components/Dashboard.js';
 
-let dbPORT = "3005";
+let dbPORT = "https://cryptotrack-back-v2.herokuapp.com/" || 3004;
 let dbbaseURL = 'http://localhost:';
 
 class App extends React.Component {

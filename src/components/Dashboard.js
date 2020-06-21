@@ -1,9 +1,12 @@
 import React from 'react'
+import 'zingchart/es6';
 import ZingChart from 'zingchart-react';
+// EXPLICITLY IMPORT MODULE
+import 'zingchart-react/dist/modules/zingchart-depth.min.js';
 import Header from './header.js';
 import SearchBox from './SearchBox.js';
 
-let dbPORT = "3005";
+let dbPORT = "3004";
 let dbbaseURL = 'http://localhost:';
 let apiIdSearchBaseURL = 'https://api.coinlore.net/api/ticker/?id='
 
@@ -104,6 +107,7 @@ class Dashboard extends React.Component {
         fetch(dbbaseURL + dbPORT + '/crypto/' + this.state.userId)      
             .then(data => data.json(), err => console.log(err))
             .then(parsedData => {
+                console.log(parsedData)
                 this.getFavoritesFromApi(parsedData.currencyIds)
                 this.setState({idArr: parsedData.currencyIds})
             })
