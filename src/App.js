@@ -26,7 +26,7 @@ class App extends React.Component {
 
     handleSignUp = () => {
         console.log(this.state.username, this.state.password);
-        fetch("https://cryptotrack-back-v2.herokuapp.com/" + "/crypto", {
+        fetch("https://cryptotrack-back-v2.herokuapp.com/" + "crypto", {
           method: "POST",
           body: JSON.stringify({
             username: this.state.username,
@@ -51,7 +51,7 @@ class App extends React.Component {
     // HANDLE SIGN IN
     handleSignIn = () => {
         console.log(this.state.username, this.state.password);
-        fetch("https://cryptotrack-back-v2.herokuapp.com/" + '/sessions', {
+        fetch("https://cryptotrack-back-v2.herokuapp.com/" + 'sessions', {
           method: "POST",
           // credentials: "same-origin",
           // mode: "no-cors",
