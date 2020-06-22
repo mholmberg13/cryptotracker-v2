@@ -3,7 +3,7 @@ import './App.css';
 import LandingPage from './components/LandingPage.js';
 import Dashboard from './components/Dashboard.js';
 
-let dbPORT = "https://cryptotrack-back-v2.herokuapp.com/" || 3004;
+let dbPORT = 3004;
 let dbbaseURL = 'http://localhost:';
 
 class App extends React.Component {
@@ -26,7 +26,7 @@ class App extends React.Component {
 
     handleSignUp = () => {
         console.log(this.state.username, this.state.password);
-        fetch(dbbaseURL + dbPORT + "/crypto", {
+        fetch("https://cryptotrack-back-v2.herokuapp.com/" + "/crypto", {
           method: "POST",
           body: JSON.stringify({
             username: this.state.username,
@@ -51,7 +51,7 @@ class App extends React.Component {
     // HANDLE SIGN IN
     handleSignIn = () => {
         console.log(this.state.username, this.state.password);
-        fetch(dbbaseURL + dbPORT + '/sessions', {
+        fetch("https://cryptotrack-back-v2.herokuapp.com/" + '/sessions', {
           method: "POST",
           // credentials: "same-origin",
           // mode: "no-cors",
