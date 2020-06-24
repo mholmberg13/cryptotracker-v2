@@ -28,7 +28,7 @@ class App extends React.Component {
         console.log(this.state.username, this.state.password);
         fetch("https://cryptotrack-back-v2.herokuapp.com/" + "crypto", {
           method: "POST",
-          mode: "no-cors",
+          // mode: "no-cors",
           body: JSON.stringify({
             username: this.state.username,
             password: this.state.password,
@@ -55,7 +55,7 @@ class App extends React.Component {
         fetch("https://cryptotrack-back-v2.herokuapp.com/" + 'sessions', {
           method: "POST",
           // credentials: "same-origin",
-          mode: "no-cors",
+          // mode: "no-cors",
           body: JSON.stringify({
             username: this.state.username,
             password: this.state.password,
