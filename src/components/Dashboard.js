@@ -113,7 +113,7 @@ class Dashboard extends React.Component {
         })
             .then(data => data.json(), err => console.log(err))
             .then(parsedData => {
-                console.log(parsedData)
+                console.log("parsedData", parsedData)
                 this.getFavoritesFromApi(parsedData.currencyIds)
                 this.setState({idArr: parsedData.currencyIds})
             })
