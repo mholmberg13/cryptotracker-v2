@@ -6,7 +6,7 @@ import 'zingchart-react/dist/modules/zingchart-depth.min.js';
 import Header from './header.js';
 import SearchBox from './SearchBox.js';
 
-let dbbaseURL = "https://cryptotrack.herokuapp.com/" || 'http://localhost:3004';
+let dbbaseURL = "https://cryptotrack-back-v2.herokuapp.com/" || 'http://localhost:3004';
 let apiIdSearchBaseURL = 'https://api.coinlore.net/api/ticker/?id='
 
 // LIST ITEM COMPONENT
@@ -172,7 +172,7 @@ class Dashboard extends React.Component {
             }
         }
         // push update to database
-        fetch(dbbaseURL + '/crypto/' + this.state.userId)
+        fetch(dbbaseURL + 'crypto/' + this.state.userId)
             .then(data => data.json(), err => console.log(err))
             .then(parsedData => {
                 console.log('parsedData',parsedData);
@@ -185,7 +185,7 @@ class Dashboard extends React.Component {
 
     // DELETE USER
     deleteUser = () => {
-        fetch(dbbaseURL + '/crypto/' + this.state.userId, {
+        fetch(dbbaseURL + 'crypto/' + this.state.userId, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
