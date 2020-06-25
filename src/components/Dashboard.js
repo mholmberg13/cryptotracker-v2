@@ -92,7 +92,12 @@ class Dashboard extends React.Component {
     // GET FAVORITES FROM API
     getFavoritesFromApi = (idArr) => {
         for(let i=0;i<idArr.length;i++){
-            fetch(apiIdSearchBaseURL + idArr[i])
+            fetch(apiIdSearchBaseURL + idArr[i], {
+                headers : { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                   }
+            })
                 .then(data => data.json(), err => console.log(err))
                 .then(parsedData => {
                     this.handleCreateFavoritesList(parsedData);
@@ -103,7 +108,12 @@ class Dashboard extends React.Component {
     // GET FAVORITES FROM DATABASE
     getFavoritesList = () => {
         this.setState({favorites:[]})
-        fetch(dbbaseURL + '/crypto/' + this.state.userId)      
+        fetch(dbbaseURL + '/crypto/' + this.state.userId, {
+            headers : { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+               }
+        })      
             .then(data => data.json(), err => console.log(err))
             .then(parsedData => {
                 console.log(parsedData)
