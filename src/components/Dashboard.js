@@ -105,7 +105,7 @@ class Dashboard extends React.Component {
     getFavoritesList = () => {
         console.log("getting fav list")
         this.setState({favorites:[]})
-        fetch(dbbaseURL + '/crypto/' + this.state.userId)
+        fetch(dbbaseURL + 'crypto/' + this.state.userId)
             .then(data => data.json(), err => console.log(err))
             .then(parsedData => {
                 console.log(parsedData)
@@ -121,7 +121,7 @@ class Dashboard extends React.Component {
 
     pushToFavorites = (copyUsername, copyPassword, copyCurrencyIds) => {
         console.log("pushToFavorites")
-        fetch(dbbaseURL + '/crypto/' + this.state.userId, {
+        fetch(dbbaseURL + 'crypto/' + this.state.userId, {
             method: 'PUT',
             body: JSON.stringify({
                 username: copyUsername,
@@ -144,7 +144,7 @@ class Dashboard extends React.Component {
     // GET FAVORITES FROM DATABASE
     addToFavorites = (id) => {
         console.log("addToFAvorites")
-      fetch(dbbaseURL + '/crypto/' + this.state.userId)      
+      fetch(dbbaseURL + 'crypto/' + this.state.userId)      
           .then(data => data.json(), err => console.log(err))
           .then(parsedData => {
               console.log('parsedData',parsedData);
