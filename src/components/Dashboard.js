@@ -118,7 +118,7 @@ class Dashboard extends React.Component {
     }
 
     pushToFavorites = (copyUsername, copyPassword, copyCurrencyIds) => {
-        fetch(dbbaseURL + dbPORT + '/crypto/' + this.state.userId, {
+        fetch(dbbaseURL + '/crypto/' + this.state.userId, {
             method: 'PUT',
             body: JSON.stringify({
                 username: copyUsername,
@@ -140,7 +140,7 @@ class Dashboard extends React.Component {
   
     // GET FAVORITES FROM DATABASE
     addToFavorites = (id) => {
-      fetch(dbbaseURL + dbPORT + '/crypto/' + this.state.userId)      
+      fetch(dbbaseURL + '/crypto/' + this.state.userId)      
           .then(data => data.json(), err => console.log(err))
           .then(parsedData => {
               console.log('parsedData',parsedData);
@@ -162,7 +162,7 @@ class Dashboard extends React.Component {
             }
         }
         // push update to database
-        fetch(dbbaseURL + dbPORT + '/crypto/' + this.state.userId)
+        fetch(dbbaseURL + '/crypto/' + this.state.userId)
             .then(data => data.json(), err => console.log(err))
             .then(parsedData => {
                 console.log('parsedData',parsedData);
@@ -175,7 +175,7 @@ class Dashboard extends React.Component {
 
     // DELETE USER
     deleteUser = () => {
-        fetch(dbbaseURL + dbPORT + '/crypto/' + this.state.userId, {
+        fetch(dbbaseURL + '/crypto/' + this.state.userId, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
