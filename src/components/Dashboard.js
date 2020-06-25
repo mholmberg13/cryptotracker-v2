@@ -142,12 +142,7 @@ class Dashboard extends React.Component {
   
     // GET FAVORITES FROM DATABASE
     addToFavorites = (id) => {
-      fetch(dbbaseURL + '/crypto/' + this.state.userId), {
-      headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            } 
-             
+      fetch(dbbaseURL + '/crypto/' + this.state.userId)      
           .then(data => data.json(), err => console.log(err))
           .then(parsedData => {
               console.log('parsedData',parsedData);
@@ -158,7 +153,6 @@ class Dashboard extends React.Component {
               console.log(this.state.copyCurrencyIds)
               this.pushToFavorites(copyUsername, copyPassword, copyCurrencyIds)
           }) 
-        }
     }
  
     // DELETE LIST ITE
