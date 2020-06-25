@@ -79,7 +79,7 @@ class App extends React.Component {
     };
 
     handleLogOut = () => {
-      fetch("https://cryptotrack-back-v2.herokuapp.com/" + '/sessions', {
+      fetch("https://cryptotrack-back-v2.herokuapp.com/" + 'sessions', {
         method: "DELETE",
         // credentials: "same-origin",
         // mode: "no-cors",
