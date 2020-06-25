@@ -105,7 +105,12 @@ class Dashboard extends React.Component {
     getFavoritesList = () => {
         console.log("getting fav list")
         this.setState({favorites:[]})
-        fetch(dbbaseURL + 'crypto/' + this.state.userId)
+        fetch(dbbaseURL + 'crypto/' + this.state.userId, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
             .then(data => data.json(), err => console.log(err))
             .then(parsedData => {
                 console.log(parsedData)
@@ -129,7 +134,8 @@ class Dashboard extends React.Component {
                 currencyIds: copyCurrencyIds
             }),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             }
         }).then(res => res.json())
         .then(resJson => {
