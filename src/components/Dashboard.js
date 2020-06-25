@@ -6,8 +6,7 @@ import 'zingchart-react/dist/modules/zingchart-depth.min.js';
 import Header from './header.js';
 import SearchBox from './SearchBox.js';
 
-let dbPORT = "3004";
-let dbbaseURL = 'http://localhost:';
+let dbbaseURL = "https://cryptotrack.herokuapp.com/" || 'http://localhost:3004';
 let apiIdSearchBaseURL = 'https://api.coinlore.net/api/ticker/?id='
 
 // LIST ITEM COMPONENT
@@ -104,7 +103,7 @@ class Dashboard extends React.Component {
     // GET FAVORITES FROM DATABASE
     getFavoritesList = () => {
         this.setState({favorites:[]})
-        fetch(dbbaseURL + dbPORT + '/crypto/' + this.state.userId)      
+        fetch(dbbaseURL + '/crypto/' + this.state.userId)      
             .then(data => data.json(), err => console.log(err))
             .then(parsedData => {
                 console.log(parsedData)
