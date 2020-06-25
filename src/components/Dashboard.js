@@ -147,7 +147,7 @@ class Dashboard extends React.Component {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             } 
-        }     
+             
           .then(data => data.json(), err => console.log(err))
           .then(parsedData => {
               console.log('parsedData',parsedData);
@@ -158,6 +158,7 @@ class Dashboard extends React.Component {
               console.log(this.state.copyCurrencyIds)
               this.pushToFavorites(copyUsername, copyPassword, copyCurrencyIds)
           }) 
+        }
     }
  
     // DELETE LIST ITE
